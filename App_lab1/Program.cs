@@ -2,6 +2,7 @@
 using Collection_lab1;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace lab1_Byshovets
 {
@@ -26,6 +27,7 @@ namespace lab1_Byshovets
                     "2: Show all values from stack.\n" +
                     "3: Show top value of stack.\n" +
                     "4: Delete value from stack.\n" +
+                    "0: Exit.\n" +
                     "Enter key: ");
 
                 key = Convert.ToInt32(Console.ReadLine());

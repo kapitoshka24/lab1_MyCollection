@@ -5,16 +5,6 @@ using System.Collections.Specialized;
 
 namespace Collection_lab1
 {
-    public class Node<T>
-    {
-        public Node(T data)
-        {
-            Data = data;
-        }
-        public T Data { get; set; }
-        public Node<T> Next { get; set; }
-    }
-
     public class NodeStack<T> : IEnumerable<T>, ICollection, INotifyCollectionChanged
     {
         Node<T> head;
@@ -38,8 +28,8 @@ namespace Collection_lab1
             }
         }
 
-        public object SyncRoot => this; //передаваемый обьект стека для начала синхронизации
-        public bool IsSynchronized => false; //мультипоточность запрещена! (нельзя использовать синхронизацию)
+        public object SyncRoot => this;
+        public bool IsSynchronized => false;
 
         public void Push(T item)
         {
@@ -95,8 +85,7 @@ namespace Collection_lab1
                 yield return current.Data;
             }
         }
-
-        public void CopyTo(Array array, int index)
+        void ICollection.CopyTo(Array array, int index)
         {
             int item = 0;
 
